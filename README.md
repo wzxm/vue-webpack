@@ -1,6 +1,7 @@
-# project
+# vue-webpack
 
 > A Vue.js project
+> 使用 vue-cli 构建 webpack+vue 项目，增加了vue-router2.0
 
 ## Build Setup
 

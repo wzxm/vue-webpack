@@ -2,7 +2,9 @@
   <div id="app">
     <img src="./assets/logo.png">
     <Footers></Footers>
-    <router-view class="view" keep-alive transition="slide"></router-view>
+    <transition :name="transitionName">
+      <router-view class="view"></router-view>
+    </transition>
   </div>
 </template>
 
@@ -21,6 +23,19 @@ export default {
   init () {
     let router = new Router()
     router.push('/home')// 跳转到home组件
+  },
+  data () {
+    return {
+      transitionName: 'slide-left'
+    }
+  },
+  watch: {
+    '$route' (to, from) {
+      const toDepth = to.path.split('/').length
+      const fromDepth = from.path.split('/').length
+      this.transitionName = toDepth < fromDepth ? 'slide-right' : 'slide-left'
+      console.log(from)
+    }
   }
 }
 </script>
