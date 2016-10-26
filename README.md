@@ -1,8 +1,21 @@
 # vue-webpack
 
 > A Vue.js project
+
 > 使用 vue-cli 构建 webpack+vue 项目，增加了vue-router2.0
 
+> 使用路由懒加载功能
+```
+const Foo = resolve => require(['./Foo.vue'], resolve)
+
+# 不需要改变任何路由配置，跟之前一样使用 Foo：
+
+const router = new VueRouter({
+  routes: [
+    { path: '/foo', component: Foo }
+  ]
+})
+```
 ## Build Setup
 
 ``` bash

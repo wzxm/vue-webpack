@@ -1,9 +1,15 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-import Home from './components/home'
-import Hello from './components/hello'
-import List from './components/list'
+// const Home = r => require.ensure([], () => r(require('./components/home')), 'group-foo')
+// const Hello = r => require.ensure([], () => r(require('./components/hello')), 'group-foo')
+// const List = r => require.ensure([], () => r(require('./components/list')), 'group-foo')
+const Home = resolve => require(['./components/home'], resolve)
+const Hello = resolve => require(['./components/hello'], resolve)
+const List = resolve => require(['./components/list'], resolve)
+// import Home from './components/home'
+// import Hello from './components/hello'
+// import List from './components/list'
 
 // 使用vue-router
 Vue.use(VueRouter)

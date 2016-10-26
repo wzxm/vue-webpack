@@ -29,6 +29,7 @@ export default {
       transitionName: 'slide-left'
     }
   },
+  // 增加路由监听，可以获得来源和去向页面
   watch: {
     '$route' (to, from) {
       const toDepth = to.path.split('/').length
