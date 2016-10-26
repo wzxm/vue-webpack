@@ -9,7 +9,7 @@
 
 <script>
 export default {
-  name: 'hello',
+  name: 'list',
   data () {
     return {
       list: [

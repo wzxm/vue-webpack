@@ -35,7 +35,7 @@ export default {
       const toDepth = to.path.split('/').length
       const fromDepth = from.path.split('/').length
       this.transitionName = toDepth < fromDepth ? 'slide-right' : 'slide-left'
-      console.log(from)
+      // console.log(from)
     }
   }
 }
