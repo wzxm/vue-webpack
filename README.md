@@ -8,7 +8,7 @@
 ```
 const Foo = resolve => require(['./Foo.vue'], resolve)
 
-# 不需要改变任何路由配置，跟之前一样使用 Foo：
+##### 不需要改变任何路由配置，跟之前一样使用 Foo：
 
 const router = new VueRouter({
   routes: [
