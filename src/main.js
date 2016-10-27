@@ -1,13 +1,17 @@
 import Vue from 'vue'
 
 import App from './App'
+import store from './vuex/store'
 import router from './routers'
 
-// 现在我们可以启动应用了！
-// 路由器会创建一个 App 实例，并且挂载到选择符 #app 匹配的元素上。
+/**
+ * [template 实例化Vue]
+ * @type {String}
+ */
 new Vue({
   router,
   template: '<App/>',
+  store,
   components: { App }
 }).$mount('#app')
 

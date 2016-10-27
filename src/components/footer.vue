@@ -2,8 +2,8 @@
     <div class='footer'>
         <p>
             <router-link to="/home" active-class="active">首页</router-link>
-            <router-link to="/list" active-class="active">跳转1</router-link>
-            <router-link to="/hello" active-class="active">跳转2</router-link>
+            <router-link to="/index" active-class="active">跳转index</router-link>
+            <router-link to="/hello" active-class="active">跳转hello</router-link>
         </p>
     </div>
 </template>
