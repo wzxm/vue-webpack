@@ -30,7 +30,7 @@
           :class="{active: activeNote === note}"
           @click="updateActiveNote(note)">
           <h4 class="list-group-item-heading">
-            {{note.text.trim().substring(0, 30)}}
+            {{note.text.trim().substring(0, 15)}}
           </h4>
         </a>
       </div>
@@ -59,8 +59,10 @@ export default {
       }
     }
   },
-  methods: mapActions([
-    'updateActiveNote'
-  ])
+  methods: {
+    ...mapActions([
+      'updateActiveNote'
+    ])
+  }
 }
 </script>

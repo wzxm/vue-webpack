@@ -1,7 +1,7 @@
 <template>
   <div id="note-editor">
     <textarea
-      :value="activeNoteText"
+      :value="text"
       @input="editNote"
       class="form-control">
     </textarea>
@@ -15,7 +15,10 @@ export default {
   computed: {
     ...mapGetters([
       'activeNoteText'
-    ])
+    ]),
+    text () {
+      return this.activeNoteText
+    }
   },
   methods: {
     ...mapActions([

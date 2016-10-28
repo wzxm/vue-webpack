@@ -11,7 +11,7 @@ const state = {
   // TODO 放置初始状态
   count: 0,
   notes: [],
-  activeNote: []
+  activeNote: {}
 }
 
 // 创建一个对象存储一系列我们接下来要写的 mutation 函数
@@ -27,22 +27,37 @@ const mutations = {
     state.count = state.count - amount
   },
   ADD_NOTE (state) {
-    console.log(state)
     const newNote = {
-      text: 'New Note',
+      text: 'New Note' + state.count,
       favorite: false
     }
     state.notes.push(newNote)
     state.activeNote = newNote
+    state.count++
   },
 
   EDIT_NOTE (state, text) {
+    if (state.notes.length === 0) {
+      const newNote = {
+        text: text,
+        favorite: false
+      }
+      state.notes.push(newNote)
+      state.activeNote = newNote
+      state.count++
+    }
     state.activeNote.text = text
   },
 
   DELETE_NOTE (state) {
-    state.notes.$remove(state.activeNote)
-    state.activeNote = state.notes[0]
+    let index = state.notes.indexOf(state.activeNote)
+    if (index !== -1) {
+      state.notes.splice(index, 1)
+      state.activeNote = {}
+      // if (index !== 0) {
+      //   state.activeNote = state.notes[index - 1]
+      // }
+    }
   },
 
   TOGGLE_FAVORITE (state) {
