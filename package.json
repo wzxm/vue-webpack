@@ -5,6 +5,7 @@
   "author": "wangzhe",
   "private": true,
   "scripts": {
+    "test": "karma start",
     "dev": "node build/dev-server.js",
     "build": "node build/build.js",
     "lint": "eslint --ext .js,.vue src"
