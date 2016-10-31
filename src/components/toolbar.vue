@@ -5,6 +5,7 @@
       class="glyphicon glyphicon-star"
       :class="{starred: activeNote.favorite}"></i>
     <i @click="deleteNote" class="glyphicon glyphicon-remove"></i>
+    <i @click="gotoMain" class="glyphicon glyphicon-arrow-right"></i>
   </div>
 </template>
 
@@ -15,10 +16,15 @@ export default {
   computed: mapGetters({
     activeNote: 'activeNote'
   }),
-  methods: mapActions([
-    'addNote',
-    'deleteNote',
-    'toggleFavorite'
-  ])
+  methods: {
+    ...mapActions([
+      'addNote',
+      'deleteNote',
+      'toggleFavorite'
+    ]),
+    gotoMain: function () {
+      window.location.href = 'user.html'
+    }
+  }
 }
 </script>
