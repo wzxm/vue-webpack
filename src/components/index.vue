@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <Display></Display>
+    <br>
     <Increment></Increment>
   </div>
 </template>

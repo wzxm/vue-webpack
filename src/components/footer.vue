@@ -1,12 +1,15 @@
+<!-- 模板部分 -->
 <template>
     <div class='footer'>
         <p>
-            <router-link to="/home" active-class="active">首页</router-link>
+            <router-link to="/home/foor" active-class="active">首页</router-link>
             <router-link to="/index" active-class="active">跳转index</router-link>
             <router-link to="/hello" active-class="active">跳转hello</router-link>
         </p>
     </div>
 </template>
+
+<!-- javascript 部分 -->
 <script>
 export default {
   name: 'footer',
@@ -27,20 +30,22 @@ export default {
     '$route': 'fetchData'
   },
   methods: {
-    fetchData () {
+    fetchData (to, from) {
       this.error = this.post = null
       this.loading = true
-      console.log('执行')
     }
   }
 }
 </script>
+
+<!-- css 样式部分 -->
 <style>
     .footer{
         width: 100%;
         background: #fff;
         border-top: 1px solid #dedede;
         display: table;
+        padding-top: 50px;
     }
     .footer a{
         width: 12%;

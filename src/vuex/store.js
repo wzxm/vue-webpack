@@ -20,6 +20,9 @@ const mutations = {
   increment (state, amount) {
     state.count = state.count + amount
   },
+  updateMessage (state, message) {
+    state.count = Number(message)
+  },
   decrement (state, amount) {
     state.count = state.count - amount
   },
@@ -72,6 +75,7 @@ const mutations = {
 // 整合初始状态和变更函数，我们就得到了我们所需的 store
 // 至此，这个 store 就可以链接到我们的应用中
 export default new Vuex.Store({
+  strict: process.env.NODE_ENV !== 'production',
   actions,
   getters,
   state,

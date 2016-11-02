@@ -3,11 +3,15 @@
  * 既然我们只对事件的分发（dispatch 对象）感兴趣。（state 也可以作为可选项放入）
  * 我们可以利用 ES6 的解构（destructuring）功能来简化对参数的导入
  */
-export const increment = function ({ commit, state }) {
+export const increment = ({ commit, state }) => {
   commit('increment', 1)
 }
 
-export const decrement = function ({ commit, state }) {
+export const updateMessage = ({ commit, state }, e) => {
+  commit('updateMessage', e.target.value)
+}
+
+export const decrement = ({ commit, state }) => {
   commit('decrement', 1)
 }
 

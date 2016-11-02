@@ -1,13 +1,14 @@
+<!-- 模板部分 -->
 <template>
   <div id="user">
-    <img src="./assets/logo.png">
+    <!-- <img src="./assets/logo.png"> -->
     <Footers></Footers>
-    <transition :name="transitionName">
-      <router-view class="view"></router-view>
-    </transition>
+    <router-view class="view"></router-view>
   </div>
 </template>
 
+
+<!-- javascript 部分 -->
 <script>
 // 导入footer组件
 import Footers from './components/footer'
@@ -23,7 +24,7 @@ export default {
   },
   init () {
     let router = new Router()
-    router.push('/home')// 跳转到home组件
+    router.push('/home/foor')// 跳转到home组件
   },
   data () {
     return {
@@ -45,6 +46,7 @@ export default {
 }
 </script>
 
+<!-- css 样式部分 -->
 <style>
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
