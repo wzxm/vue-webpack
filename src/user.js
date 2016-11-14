@@ -1,4 +1,7 @@
 import Vue from 'vue'
+import Mint from 'mint-ui'
+import 'mint-ui/lib/style.css'
+Vue.use(Mint)
 
 import User from './UserCenter'
 import store from './vuex/store'

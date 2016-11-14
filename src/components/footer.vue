@@ -5,6 +5,7 @@
             <router-link to="/home/foor" active-class="active">首页</router-link>
             <router-link to="/index" active-class="active">跳转index</router-link>
             <router-link to="/hello" active-class="active">跳转hello</router-link>
+            <router-link to="/mint" active-class="active">Mint-UI示例</router-link>
         </p>
     </div>
 </template>
