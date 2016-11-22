@@ -6,6 +6,7 @@
             <router-link to="/index" active-class="active">跳转index</router-link>
             <router-link to="/hello" active-class="active">跳转hello</router-link>
             <router-link to="/mint" active-class="active">Mint-UI示例</router-link>
+            <router-link to="/inputBox" active-class="active">键盘组件</router-link>
         </p>
     </div>
 </template>

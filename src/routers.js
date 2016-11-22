@@ -8,6 +8,7 @@ const Home = resolve => require(['./components/home'], resolve)
 const Hello = resolve => require(['./components/hello'], resolve)
 const Index = resolve => require(['./components/index'], resolve)
 const Mint = resolve => require(['./components/mint'], resolve)
+const InputBox = resolve => require(['./components/inputBox'], resolve)
 // const Bar = resolve => require(['./components/bar'], resolve)
 // import Home from './components/home'
 // import Hello from './components/hello'
@@ -30,7 +31,8 @@ const routes = [
   { path: '/home/:id', name: 'home', component: Home, children: [{ path: '', component: UserHome }, { path: 'profile', component: UserProfile }, { path: 'posts', component: UserPosts }] },
   { path: '/hello', component: Hello },
   { path: '/index', component: Index },
-  { path: '/mint', component: Mint }
+  { path: '/mint', component: Mint },
+  { path: '/inputBox', component: InputBox }
 ]
 
 const router = new VueRouter({
