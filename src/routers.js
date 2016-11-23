@@ -9,6 +9,7 @@ const Hello = resolve => require(['./components/hello'], resolve)
 const Index = resolve => require(['./components/index'], resolve)
 const Mint = resolve => require(['./components/mint'], resolve)
 const InputBox = resolve => require(['./components/inputBox'], resolve)
+const Animation = resolve => require(['./components/animation'], resolve)
 // const Bar = resolve => require(['./components/bar'], resolve)
 // import Home from './components/home'
 // import Hello from './components/hello'
@@ -32,7 +33,8 @@ const routes = [
   { path: '/hello', component: Hello },
   { path: '/index', component: Index },
   { path: '/mint', component: Mint },
-  { path: '/inputBox', component: InputBox }
+  { path: '/inputBox', component: InputBox },
+  { path: '/animation', component: Animation }
 ]
 
 const router = new VueRouter({

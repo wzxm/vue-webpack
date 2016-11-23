@@ -35,7 +35,7 @@
 // import Display from './display'
 // import Increment from './increment'
 import Vue from 'vue'
-import fecha from 'fecha'
+// import fecha from 'fecha'
 import { Toast, Button, Cell, Indicator, InfiniteScroll, MessageBox, Actionsheet } from 'mint-ui'
 
 Vue.use(InfiniteScroll)
