@@ -1,9 +1,7 @@
 <template>
   <div id="toolbar">
     <i @click="addNote" class="glyphicon glyphicon-plus"></i>
-    <i @click="toggleFavorite"
-      class="glyphicon glyphicon-star"
-      :class="{starred: activeNote.favorite}"></i>
+    <i @click="toggleFavorite" class="glyphicon glyphicon-star" :class="{starred: activeNote.favorite}"></i>
     <i @click="deleteNote" class="glyphicon glyphicon-remove"></i>
     <i @click="gotoMain" class="glyphicon glyphicon-arrow-right"></i>
   </div>
