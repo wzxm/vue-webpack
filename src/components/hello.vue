@@ -1,14 +1,14 @@
 <template>
   <div class="hello">
-    <div class="loading" v-if="loading">
+    <div class="loading" v-show="loading">
       Loading...
     </div>
 
-    <div v-if='error' class="error">
+    <div v-show="error" class="error">
       {{ error }}
     </div>
 
-    <div v-if='post' class="content">
+    <div v-show="post" class="content">
       <h1>{{ msg }}</h1>
       <h2>Essential Links</h2>
       <ul>
@@ -34,16 +34,19 @@
 export default {
   data () {
     return {
-      loading: false,
-      error: null,
-      post: null,
+      loading: true,
+      error: false,
+      post: false,
       msg: 'Welcome to Your Vue.js App'
     }
   },
   created () {
     // 组件创建完成后获取数据
     // 此时 data 已经被 observed 了
-    this.fetchDate()
+    var me = this
+    setTimeout(function () {
+      me.fetchDate()
+    }, 2500)
   },
   watch: {
     '$route': 'fetchDate'
@@ -51,11 +54,8 @@ export default {
   methods: {
     fetchDate () {
       this.error = this.post = null
-      this.loading = true
-      setTimeout(function () {
-        this.post = true
-        this.loading = false
-      })
+      this.post = true
+      this.loading = false
     }
   }
 }

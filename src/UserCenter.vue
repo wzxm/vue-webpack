@@ -28,7 +28,8 @@ export default {
   },
   data () {
     return {
-      transitionName: 'slide-left'
+      transitionName: 'slide-left',
+      user: 'wangzhe'
     }
   },
   /**

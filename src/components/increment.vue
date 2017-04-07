@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<button @click='increment'>Increment +1</button>
+		<button @click='increment'>Increment +1 + {{msg}}</button>
 	</div>
 </template>
 
@@ -8,6 +8,9 @@
   import { mapActions } from 'vuex'
   
   export default {
+    default: {
+      props: ['msg']
+    },
     methods: {
       ...mapActions([
         'increment'
