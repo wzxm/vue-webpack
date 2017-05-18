@@ -84,5 +84,6 @@ a {
   width: 50%;
   margin: 0 auto;
   text-align: center;
+  background-color: #ffffff;
 }
 </style>

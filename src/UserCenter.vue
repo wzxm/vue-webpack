@@ -1,17 +1,33 @@
 <!-- 模板部分 -->
 <template>
   <div id="user">
-    <!-- <img src="./assets/logo.png"> -->
-    <Footers></Footers>
-    <router-view class="view"></router-view>
+    <v-loading></v-loading>
+    <v-header></v-header>
+    <v-nav></v-nav>
+    <div class="container main-content">
+      <div class="row">
+        <div class="col-md-8">
+          <transition name="slide-fade" mode="out-in">
+            <router-view class="view"></router-view>
+          </transition>
+        </div>
+        <div class="col-md-4">
+          <v-right></v-right>
+        </div>
+      </div>
+    </div>
+    <v-footer></v-footer>
   </div>
 </template>
 
 
 <!-- javascript 部分 -->
 <script>
-// 导入footer组件
-import Footers from './components/footer'
+import Right from './components/rightList/right'
+import Header from './components/header/header'
+import Nav from './components/nav/nav'
+import Loading from './components/loading/loading'
+import Footer from './components/footer/footer'
 // 导入路由
 import Router from 'vue-router'
 
@@ -20,11 +36,15 @@ import Router from 'vue-router'
  */
 export default {
   components: {
-    Footers
+    'v-right': Right,
+    'v-header': Header,
+    'v-nav': Nav,
+    'v-footer': Footer,
+    'v-loading': Loading
   },
   init () {
     let router = new Router()
-    router.push('/home/foor')// 跳转到home组件
+    router.push('/home')// 跳转到home组件
   },
   data () {
     return {
@@ -48,13 +68,43 @@ export default {
 </script>
 
 <!-- css 样式部分 -->
-<style>
-#app {
+<style lang="scss">
+html, body {
+  width: 100%;
+  height: 100%;
+}
+#user {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  /*margin-top: 60px;*/
+  .content {
+    height: 100%;
+    background-color: #dee0e8;
+    padding: 30px;
+  }
+  .container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .main-content {
+    background-color: #dee0e8;
+    padding: 60px 20px;
+  }
+}
+
+.slide-fade-enter-active {
+  transition: all .5s ease;
+}
+.slide-fade-leave-active {
+  transition: all .5s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-enter, .slide-fade-leave-active {
+  padding-left: 10px;
+  opacity: 0;
 }
 </style>

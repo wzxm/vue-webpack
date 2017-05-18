@@ -6,10 +6,9 @@ import VueRouter from 'vue-router'
 // const List = r => require.ensure([], () => r(require('./components/list')), 'group-foo')
 const Home = resolve => require(['./components/home'], resolve)
 const Hello = resolve => require(['./components/hello'], resolve)
-const Index = resolve => require(['./components/index'], resolve)
+const Diary = resolve => require(['./components/diary'], resolve)
 const Mint = resolve => require(['./components/mint'], resolve)
 const InputBox = resolve => require(['./components/inputBox'], resolve)
-const Animation = resolve => require(['./components/animation'], resolve)
 // const Bar = resolve => require(['./components/bar'], resolve)
 // import Home from './components/home'
 // import Hello from './components/hello'
@@ -31,10 +30,9 @@ const routes = [
   // { path: '/home', component: Home },
   { path: '/home/:id', name: 'home', component: Home, children: [{ path: '', component: UserHome }, { path: 'profile', component: UserProfile }, { path: 'posts', component: UserPosts }] },
   { path: '/hello', component: Hello },
-  { path: '/index', component: Index },
+  { path: '/diary', component: Diary },
   { path: '/mint', component: Mint },
-  { path: '/inputBox', component: InputBox },
-  { path: '/animation', component: Animation }
+  { path: '/inputBox', component: InputBox }
 ]
 
 const router = new VueRouter({

@@ -1,4 +1,8 @@
 <template>
+<div>
+  <header class="archive-header">
+    <div class="archive-title">分类：前端日记</div>
+  </header>
   <div class="row masonry_area masonry clearfix">
     <div :key="index" :id="index" v-for="(item, index) in boxList" class="col-md-6 masonry-brick" >
       <article class="box post type-post status-publish format-standard has-post-thumbnail hentry category-vue2">
@@ -16,19 +20,19 @@
           <div class="entry-meta" style="color:#7f8c8d;">
             阅读：{{item.number}} 次
             <ul class="list-inline">
-              <li>
-                <span class="author vcard">
-                  By <a class="url fn n" href="http://jspang.com/author/jspang01/">{{item.author}}</a>
-                </span>
-              </li>
-              <li>/</li>
-              <li>
-                <span class="posted-on">
-                  <time class="entry-date published" datetime="2017-05-03T18:52:25+00:00">{{item.time}}</time>
-                </span>
-              </li>
-            </ul>
-          </div><!-- .entry-meta -->
+        <li>
+          <span class="author vcard">
+            By <a class="url fn n" href="http://jspang.com/author/jspang01/">{{item.author}}</a>
+          </span>
+        </li>
+        <li>/</li>
+        <li>
+          <span class="posted-on">
+            <time class="entry-date published" datetime="2017-05-03T18:52:25+00:00">{{item.time}}</time>
+          </span>
+        </li>
+        </ul>
+        </div><!-- .entry-meta -->
           <div class="entry-content">
             <p>{{item.content}}</p>
           </div><!-- .entry-content -->
@@ -36,6 +40,16 @@
       </article><!-- #post-## -->
     </div>
   </div>
+</div>
+    <!-- exact 这个链接只会在地址为 /home/foor 的时候被激活 -->
+    <!--<router-link to="/home/foor" active-class="foor-active" exact>前往list列表页面</router-link>
+    <router-link to="/home/foor/profile" active-class="foor-active" exact>前往list列表页面</router-link>
+    <router-link to="/home/foor/posts" active-class="foor-active" exact>前往list列表页面</router-link>
+
+    <transition name="slide-fade" mode="out-in">
+      <router-view class="chile-view"></router-view>
+    </transition>-->
+  <!--</div>-->
 </template>
 
 <script>
@@ -109,82 +123,90 @@ export default {
 </script>
 
 <style lang="scss">
-.main-content article.hentry {
-    background-color: #ffffff;
-    margin-bottom: 30px;
-    -webkit-box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.03);
-    -moz-box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.03);
-    box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.03);
-}
-a img, iframe {
-    border: none !important;
-}
-img {
-    vertical-align: middle;
-}
-article .padding-content {
-    padding: 26px;
-    background-color: #ffffff;
-    h1.entry-title {
-        margin-top: 0;
-        margin-bottom: 12px;
-        font-size: 20px;
-        font-weight: 600;
-        letter-spacing: 1px;
-        a {
-            color: #222222;
-            &:hover {
-                text-decoration: none !important;
-                color: #e74c3c;
-            }
-        }
-    }
-    .entry-meta {
-        text-align: left;
-        ul {
-            margin-bottom: 14px;
-            margin-left: -2px;
-            color: #7f8c8d;
-            li {
-                padding-left: 2px;
-                padding-right: 2px;
-                span > a{
-                    color: #7f8c8d;
-                    &:hover {
-                        text-decoration: none !important;
-                        color: #e74c3c;
-                    }
-                }
-            }
-        }
-    }
-    .entry-content {
-        text-align: left;
-        p {
-            margin: 0 0 20px;
-        }
-    }
-}
-
-.thumbnails {
-  img {
-    height: 250px;
+  .main-content article.hentry {
+      background-color: #ffffff;
+      margin-bottom: 30px;
+      -webkit-box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.03);
+      -moz-box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.03);
+      box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.03);
   }
-}
+  a img, iframe {
+      border: none !important;
+  }
+  img {
+      vertical-align: middle;
+  }
+  article .padding-content {
+      padding: 26px;
+      background-color: #ffffff;
+      h1.entry-title {
+          margin-top: 0;
+          margin-bottom: 12px;
+          font-size: 20px;
+          font-weight: 600;
+          letter-spacing: 1px;
+          a {
+              color: #222222;
+              &:hover {
+                  text-decoration: none !important;
+                  color: #e74c3c;
+              }
+          }
+      }
+      .entry-meta {
+          text-align: left;
+          ul {
+              margin-bottom: 14px;
+              margin-left: -2px;
+              color: #7f8c8d;
+              li {
+                  padding-left: 2px;
+                  padding-right: 2px;
+                  span > a{
+                      color: #7f8c8d;
+                      &:hover {
+                          text-decoration: none !important;
+                          color: #e74c3c;
+                      }
+                  }
+              }
+          }
+      }
+      .entry-content {
+          text-align: left;
+          p {
+              margin: 0 0 20px;
+          }
+      }
+  }
 
-.clearfix:after,
-.clearfix:before {
-  content: " ";
-  display: table;
-}
-.clearfix:after {
-  clear: both;
-}
-.masonry {
-  position: relative;
-}
-.box {
-  float: left;
-  height: auto;
-}
+  .thumbnails {
+    img {
+      height: 250px;
+    }
+  }
+
+  .clearfix:after,
+  .clearfix:before {
+    content: " ";
+    display: table;
+  }
+  .clearfix:after {
+    clear: both;
+  }
+  .masonry {
+    position: relative;
+  }
+  .box {
+    float: left;
+    height: auto;
+  }
+  .archive-header {
+      background-color: #ffffff;
+      /*margin-left: 15px;*/
+      /*margin-right: 15px;*/
+      padding: 26px 20px;
+      margin-bottom: 30px;
+      text-align: left;
+  }
 </style>
